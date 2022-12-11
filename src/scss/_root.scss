@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $bgcolor;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: $bgcolor;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9e9e9e;
+  border-radius: 20px;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+}

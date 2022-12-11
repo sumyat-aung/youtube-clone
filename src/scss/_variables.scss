@@ -1,0 +1,20 @@
+$bgcolor: #0f0f0f;
+$textcolor: #d3d3d3;
+$hover: #3f3f3f;
+$border: #303030;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerAlign {
+  display: flex;
+  align-items: center;
+}
+
+@mixin centerJus {
+  display: flex;
+  justify-content: center;
+}
