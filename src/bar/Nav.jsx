@@ -15,7 +15,6 @@ const Nav = () => {
 
   // handling noti box
   const [notiBox, setNotiBox] = useState(false);
-  console.log(notiBox);
 
   return (
     <>
