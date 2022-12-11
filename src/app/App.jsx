@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import Nav from "../bar/Nav.jsx";
+import SideBar from "../bar/SideBar.jsx";
 
 import { context } from "../context/context.jsx";
 
@@ -16,8 +17,8 @@ function App() {
   return (
     <div className="app">
       <Nav />
-      <div className="main-body">
-        <div className="sidebar"></div>
+      <div className="main">
+        <SideBar />
         <div className="conent">
           <Routes>
             <Route path="/" element={<Feed />} />

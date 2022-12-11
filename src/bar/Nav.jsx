@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../assests/navbar/logo.png";
 import NotiBox from "../scss/components/NotiBox";
 
+import { context } from "../context/context.jsx";
+
+// import necessary components ^^^^^
+
 const Nav = () => {
+  // destructuring every value we need from context to set SideBar
+  const { sideBar, setsideBar } = useContext(context);
+
   // handling search
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
@@ -20,7 +27,10 @@ const Nav = () => {
     <>
       <div className="nav">
         <div className="logos_1">
-          <i className="fa-solid fa-bars"></i>
+          <i
+            className="fa-solid fa-bars"
+            onClick={() => setsideBar(!sideBar)}
+          ></i>
           <Link to={"/"}>
             <img src={logo} alt="youtube logo" />
             <h4>YOUTUBE</h4>

@@ -24,3 +24,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+.main {
+  display: flex;
+  border: #9e9e9e solid;
+  width: 100%;
+  height: calc(100vh - 56px);
+}
