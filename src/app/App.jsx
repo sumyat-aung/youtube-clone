@@ -14,7 +14,7 @@ function App() {
   const consumer = useContext(context);
 
   return (
-    <div className="App">
+    <div className="app">
       <Nav />
       <div className="main-body">
         <div className="sidebar"></div>
