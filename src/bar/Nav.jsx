@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../assests/navbar/logo.png";
-import NotiBox from "../scss/components/NotiBox";
+import NotiBox from "../components/NotiBox";
 
 import { context } from "../context/context.jsx";
 
@@ -23,6 +23,7 @@ const Nav = () => {
   // handling noti box
   const [notiBox, setNotiBox] = useState(false);
 
+  //// jsx
   return (
     <>
       <div className="nav">

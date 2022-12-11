@@ -1,0 +1,25 @@
+.sb-big {
+  width: 215px;
+  border: 1px solid;
+  height: 100%;
+  @include centerAlign;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  display: inline-block;
+  color: $textcolor;
+  width: 180px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 10px;
+  margin-bottom: 3px;
+  @include center;
+  font-weight: 600;
+}
+
+.sidebar-link:hover {
+  background: $hover;
+}
