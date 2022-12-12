@@ -1,21 +1,27 @@
 .sb-big {
-  width: 215px;
+  width: 230px;
   border: 1px solid;
   height: 100%;
   @include centerAlign;
   flex-direction: column;
   padding-top: 30px;
+  animation: sideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.home {
+  border-bottom: 1px solid $border;
+  padding-bottom: 15px;
 }
 
 .sidebar-link {
   text-decoration: none;
   display: inline-block;
   color: $textcolor;
-  width: 200px;
+  width: 210px;
   height: 40px;
   padding: 0 18px;
   border-radius: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   @include centerAlign;
   font-weight: 600;
 
@@ -26,4 +32,27 @@
 
 .sidebar-link:hover {
   background: $hover;
+}
+
+.sidebar-link.active {
+  background-color: #2928289f;
+}
+
+// small-side bar
+.sb-small {
+  width: 70px;
+  border: 1px solid;
+  height: 100%;
+  animation: sideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+// animation
+
+@keyframes sideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
