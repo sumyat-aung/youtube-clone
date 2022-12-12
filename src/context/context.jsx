@@ -9,11 +9,11 @@ const ContextProvider = (props) => {
   const [sideBar, setsideBar] = useState(
     window.innerWidth < 1000 ? false : true
   );
-  const [manual, setManual] = useState(false);
+
   //
 
   return (
-    <context.Provider value={{ sideBar, setsideBar, manual, setManual }}>
+    <context.Provider value={{ sideBar, setsideBar }}>
       {props.children}
     </context.Provider>
   );

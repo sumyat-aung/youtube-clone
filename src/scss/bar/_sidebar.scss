@@ -1,6 +1,5 @@
 .sb-big {
   width: 230px;
-  border: 1px solid;
   height: 100%;
   @include centerAlign;
   flex-direction: column;
@@ -13,6 +12,11 @@
   padding-bottom: 15px;
 }
 
+.explore {
+  @extend .home;
+  padding-top: 20px;
+}
+
 .sidebar-link {
   text-decoration: none;
   display: inline-block;
@@ -23,10 +27,16 @@
   border-radius: 10px;
   margin-bottom: 5px;
   @include centerAlign;
-  font-weight: 600;
+  font-weight: 200;
+  font-size: 14px;
 
   i {
     margin-right: 20px;
+  }
+  img {
+    margin-right: 20px;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -38,12 +48,29 @@
   background-color: #2928289f;
 }
 
+.explore h4 {
+  padding: 10px 20px;
+  color: $textcolor;
+  font-weight: 200;
+}
+
 // small-side bar
 .sb-small {
   width: 70px;
   border: 1px solid;
   height: 100%;
-  animation: sideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+// responsive
+
+@media all and (max-width: 1000px) {
+  .sb-big {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    position: absolute;
+    z-index: 10;
+    // border-right: 1px solid $border;
+    background-color: $bgcolor;
+  }
 }
 
 // animation

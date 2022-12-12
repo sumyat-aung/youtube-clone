@@ -27,7 +27,10 @@ body {
 
 .main {
   display: flex;
-  border: #9e9e9e solid;
   width: 100%;
   height: calc(100vh - 56px);
+}
+
+.content {
+  border: olive solid 1px;
 }

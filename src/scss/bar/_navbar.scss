@@ -62,7 +62,7 @@
 
 // 2nd part
 .input-box {
-  width: 30%;
+  width: 600px;
   height: 38px;
   border-radius: 40px;
   background-color: #121212;
@@ -87,7 +87,7 @@
 
   i {
     background-color: $hover;
-    width: 10%;
+    width: 70px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     height: 38px;
@@ -153,5 +153,96 @@
     padding: 14px;
     color: #fff;
     font-weight: 100;
+  }
+}
+
+// responsive
+
+@media all and (max-width: 1200px) {
+  .input-box {
+    width: 500px;
+  }
+
+  .logos_2 {
+    width: 155px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .input-box {
+    width: 400px;
+  }
+
+  .logos_1 {
+    width: 155px;
+
+    h4 {
+      display: none;
+    }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .input-box {
+    width: 300px;
+
+    i {
+      cursor: default;
+    }
+  }
+
+  .logos_1 {
+    width: 100px;
+
+    i {
+      cursor: default;
+    }
+
+    a {
+      padding: 0;
+      cursor: default;
+
+      img {
+        width: 30px;
+        padding-right: 0;
+      }
+    }
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .logos_2 {
+    width: 120px;
+
+    i {
+      margin-right: 5px;
+      cursor: default;
+    }
+  }
+
+  .noti {
+    right: 30px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .nav {
+    height: 90px;
+    align-items: flex-start;
+    padding: 5px 0;
+  }
+
+  .input-box {
+    width: 90vw;
+    margin: 10px 20px;
+    margin-top: 40px;
+    position: absolute;
+  }
+
+  .noti {
+    right: 20px;
+    width: 300px;
   }
 }

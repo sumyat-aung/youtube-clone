@@ -10,10 +10,9 @@ import { context } from "../context/context.jsx";
 
 const Nav = () => {
   // destructuring every value we need from context to set SideBar
-  const { sideBar, setsideBar, setManual } = useContext(context);
+  const { sideBar, setsideBar } = useContext(context);
   const sideBarButtonHandle = () => {
     setsideBar(!sideBar);
-    setManual(true);
   };
 
   // handling search
