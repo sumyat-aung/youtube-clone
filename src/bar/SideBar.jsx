@@ -45,6 +45,13 @@ const SideBar = () => {
   sideBar && disableScroll();
   sideBar === false && enableScroll();
 
+  // closing sideBar on every route
+  function close() {
+    if (window.innerWidth < 1000) {
+      setsideBar(false);
+    }
+  }
+
   //// jsx
 
   return (
@@ -52,13 +59,19 @@ const SideBar = () => {
       {sideBar && (
         <div className="sb-big">
           <div className="home">
-            <NavLink to={"/"} className="sidebar-link" activeClassName="active">
+            <NavLink
+              to={"/"}
+              className={`sidebar-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+              onClick={close}
+            >
               <i className="fa-solid fa-house"></i> Home
             </NavLink>
             <NavLink
               to={"/explore"}
-              className="sidebar-link"
-              activeClassName="active"
+              className={`sidebar-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+              onClick={close}
             >
               <i className="fa-solid fa-globe"></i> Explore
             </NavLink>
@@ -68,29 +81,33 @@ const SideBar = () => {
             <h4>Explore</h4>
             <NavLink
               to={"/gaming"}
-              className="sidebar-link"
-              activeClassName="active"
+              className={`sidebar-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+              onClick={close}
             >
               <i className="fa-solid fa-gamepad"></i> Gaming
             </NavLink>
             <NavLink
               to={"/beauty"}
-              className="sidebar-link"
-              activeClassName="active"
+              className={`sidebar-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+              onClick={close}
             >
               <i className="fa-solid fa-vest"></i> Fashion & Beauty
             </NavLink>
             <NavLink
               to={"/learning"}
-              className="sidebar-link"
-              activeClassName="active"
+              className={`sidebar-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+              onClick={close}
             >
               <i className="fa-solid fa-graduation-cap"></i> Learning
             </NavLink>
             <NavLink
               to={"/sports"}
-              className="sidebar-link"
-              activeClassName="active"
+              className={`sidebar-link ${({ isActive }) =>
+                isActive ? "active" : ""}`}
+              onClick={close}
             >
               <i className="fa-solid fa-medal"></i> Sports
             </NavLink>
@@ -129,7 +146,55 @@ const SideBar = () => {
           </div>
         </div>
       )}
-      {!sideBar && <div className="sb-small"> Side Bar Small </div>}
+
+      {/* --------------------------- */}
+
+      {!sideBar && (
+        <div className="sb-small">
+          <NavLink
+            to={"/"}
+            className={`sidebar-link-sm ${({ isActive }) =>
+              isActive ? "active" : ""}`}
+          >
+            <i className="fa-solid fa-house"></i> Home
+          </NavLink>
+          <NavLink
+            to={"/explore"}
+            className={`sidebar-link-sm ${({ isActive }) =>
+              isActive ? "active" : ""}`}
+          >
+            <i className="fa-solid fa-globe"></i> Explore
+          </NavLink>
+          <NavLink
+            to={"/gaming"}
+            className={`sidebar-link-sm ${({ isActive }) =>
+              isActive ? "active" : ""}`}
+          >
+            <i className="fa-solid fa-gamepad"></i> Gaming
+          </NavLink>
+          <NavLink
+            to={"/beauty"}
+            className={`sidebar-link-sm ${({ isActive }) =>
+              isActive ? "active" : ""}`}
+          >
+            <i className="fa-solid fa-vest"></i> Fashion & Beauty
+          </NavLink>
+          <NavLink
+            to={"/learning"}
+            className={`sidebar-link-sm ${({ isActive }) =>
+              isActive ? "active" : ""}`}
+          >
+            <i className="fa-solid fa-graduation-cap"></i> Learning
+          </NavLink>
+          <NavLink
+            to={"/sports"}
+            className={`sidebar-link-sm ${({ isActive }) =>
+              isActive ? "active" : ""}`}
+          >
+            <i className="fa-solid fa-medal"></i> Sports
+          </NavLink>
+        </div>
+      )}
     </>
   );
 };

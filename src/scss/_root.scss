@@ -5,11 +5,6 @@
   font-family: "Roboto", arial, sans-serif;
 }
 
-body {
-  overflow-x: hidden;
-  background-color: $bgcolor;
-}
-
 ::-webkit-scrollbar {
   width: 8px;
   background-color: $bgcolor;
@@ -20,17 +15,16 @@ body {
   border-radius: 20px;
 }
 
-.app {
-  width: 100vw;
-  height: 100vh;
+body {
+  overflow-x: hidden;
+  background-color: $bgcolor;
 }
 
 .main {
   display: flex;
-  width: 100%;
-  height: calc(100vh - 56px);
 }
 
 .content {
   border: olive solid 1px;
+  display: none;
 }
