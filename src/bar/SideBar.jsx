@@ -5,22 +5,23 @@ import { context } from "../context/context.jsx";
 
 const SideBar = () => {
   // destructuring every value we need from context to set SideBar
-  const { sideBar, setsideBar } = useContext(context);
+  const { sideBar, setsideBar, manual } = useContext(context);
 
-  //   responsive Side Bar Showing BASE on Width
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 1000) {
-        setsideBar(false);
-      } else {
-        setsideBar(true);
+      if (!manual) {
+        if (window.innerWidth < 1000) {
+          setsideBar(false);
+        } else {
+          setsideBar(true);
+        }
       }
     }
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [manual]);
 
   //// jsx
 
@@ -29,10 +30,10 @@ const SideBar = () => {
       {sideBar && (
         <div className="sb-big">
           <Link to={"/"} className="sidebar-link">
-            Home{" "}
+            <i className="fa-solid fa-house"></i> Home
           </Link>
           <Link to={"/explore"} className="sidebar-link">
-            Explore{" "}
+            Explore
           </Link>
         </div>
       )}

@@ -10,7 +10,11 @@ import { context } from "../context/context.jsx";
 
 const Nav = () => {
   // destructuring every value we need from context to set SideBar
-  const { sideBar, setsideBar } = useContext(context);
+  const { sideBar, setsideBar, setManual } = useContext(context);
+  const sideBarButtonHandle = () => {
+    setsideBar(!sideBar);
+    setManual(true);
+  };
 
   // handling search
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,10 +32,7 @@ const Nav = () => {
     <>
       <div className="nav">
         <div className="logos_1">
-          <i
-            className="fa-solid fa-bars"
-            onClick={() => setsideBar(!sideBar)}
-          ></i>
+          <i className="fa-solid fa-bars" onClick={sideBarButtonHandle}></i>
           <Link to={"/"}>
             <img src={logo} alt="youtube logo" />
             <h4>YOUTUBE</h4>
