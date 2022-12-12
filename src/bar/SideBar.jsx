@@ -42,8 +42,11 @@ const SideBar = () => {
     window.onscroll = function () {};
   }
 
-  sideBar && disableScroll();
-  sideBar === false && enableScroll();
+  if (sideBar && window.innerWidth < 1000) {
+    disableScroll();
+  } else {
+    enableScroll();
+  }
 
   // closing sideBar on every route
   function close() {

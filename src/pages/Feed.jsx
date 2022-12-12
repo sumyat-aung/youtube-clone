@@ -7,7 +7,7 @@ import { context } from "../context/context.jsx";
 const Feed = () => {
   // destructuring every value we get from context
   const { sideBar } = useContext(context);
-  return <div>Feed</div>;
+  return <div className="">Feed</div>;
 };
 
 export default Feed;
