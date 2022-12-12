@@ -1,9 +1,6 @@
-import { useContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Nav from "../bar/Nav.jsx";
 import SideBar from "../bar/SideBar.jsx";
-
-import { context } from "../context/context.jsx";
 
 import Feed from "../pages/Feed.jsx";
 import Search from "../pages/Search.jsx";
@@ -17,9 +14,6 @@ import Sports from "../pages/Explore/Sports.jsx";
 // import necessary components ^^^^^
 
 function App() {
-  // destructuring every value we get from context
-  const { sideBar } = useContext(context);
-
   return (
     <div className="app">
       <Nav />
