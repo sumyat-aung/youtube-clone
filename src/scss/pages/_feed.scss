@@ -123,10 +123,8 @@
   flex-wrap: wrap;
 }
 
-.search {
-  color: $textcolor;
-  margin: 20px;
-  font-size: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid $border;
+@media (hover: none) {
+  .card-box {
+    cursor: default;
+  }
 }
