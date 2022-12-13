@@ -1,6 +1,7 @@
 import React from "react";
-import Video from "../../components/Video";
 
+import Loading from "../../components/Loading";
+import Video from "../../components/Video";
 import { useGetSearchQuery } from "../../redux/data";
 
 const Gaming = () => {
@@ -9,11 +10,13 @@ const Gaming = () => {
 
   return (
     <div>
+      <p className="items-title">
+        Gaming<i className="fa-solid fa-gamepad"></i>
+      </p>
+      {isFetching && <Loading />}
+
       {GamingData && (
         <>
-          <p className="items-title">
-            Gaming<i className="fa-solid fa-gamepad"></i>
-          </p>
           <div className="video-card-wrapper">
             {GamingData.map((data) => (
               <Video key={data.id.videoId} d={data} />

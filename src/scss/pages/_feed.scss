@@ -114,3 +114,19 @@
     margin-right: 10px;
   }
 }
+
+// Loading
+.loading-wrapper {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.search {
+  color: $textcolor;
+  margin: 20px;
+  font-size: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $border;
+}
