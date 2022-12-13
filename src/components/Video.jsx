@@ -9,10 +9,14 @@ const Video = ({ d }) => {
   const ago = moment.duration(diff).humanize();
 
   return (
-    <Link to={"/explore"} className="card-box">
+    <Link to={"/explore"} className="card-box" text="Click to play">
       <img src={d.snippet.thumbnails.medium?.url} alt={d.snippet.title} />
       <div className="card-content">
-        <img src={d.snippet.thumbnails.default?.url} alt={d.snippet.title} />
+        <img
+          src={d.snippet.thumbnails.medium?.url}
+          alt={d.snippet.title}
+          className="thumb"
+        />
         <div className="des">
           <p>{d.snippet.title}</p>
           <Link

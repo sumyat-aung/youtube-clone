@@ -1,26 +1,24 @@
-import React, { useContext } from "react";
-import { useEffect } from "react";
-import Video from "../components/Video.jsx";
+import React from "react";
 
-import { context } from "../context/context.jsx";
+import { useGetFeedQuery } from "../redux/data";
+import Video from "../components/Video.jsx";
 
 // import necessary components ^^^^^
 
 const Feed = () => {
-  // destructuring every value we need from context to fetch data
-  const { GettingFeedData, FeedData } = useContext(context);
-  useEffect(() => {
-    GettingFeedData();
-  }, []);
+  const { data, isFetching, isError } = useGetFeedQuery();
+  const feedData = data?.items;
 
-  console.log(FeedData);
-
+  console.log(useGetFeedQuery());
   return (
     <div className="feed">
-      <div className="video-card-wrapper">
-        {FeedData &&
-          FeedData.map((data) => <Video key={data.id.videoId} d={data} />)}
-      </div>
+      {feedData && (
+        <div className="video-card-wrapper">
+          {feedData.map((data) => (
+            <Video key={data.id.videoId} d={data} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

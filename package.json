@@ -9,10 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-icons/all-files": "^4.1.0",
+    "@reduxjs/toolkit": "^1.9.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.5",
     "sass": "^1.56.2"
   },

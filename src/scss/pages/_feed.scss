@@ -11,6 +11,7 @@
 
 .card-box {
   text-decoration: none;
+  position: relative;
   margin-left: 15px;
   margin-bottom: 30px;
   overflow: hidden;
@@ -82,6 +83,24 @@
     font-weight: 300;
     white-space: nowrap;
   }
+}
+
+.card-box:hover {
+  position: relative;
+}
+
+.card-box:hover::after {
+  content: attr(text);
+  position: absolute;
+  top: 170px;
+  right: 10px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background: black;
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
+  white-space: nowrap;
 }
 
 // responsive for wrapper & box
