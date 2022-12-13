@@ -2,7 +2,7 @@
   width: 230px;
   @include centerAlign;
   flex-direction: column;
-  padding-top: 30px;
+  padding: 30px 10px 10px 10px;
 }
 
 .sb-big::-webkit-scrollbar {
@@ -58,10 +58,9 @@
 
 // small-side bar
 .sb-small {
-  width: 70px;
+  width: 80px;
   height: 100%;
-  padding-top: 10px;
-  padding-left: 5px;
+  padding: 10px 20px 10px 10px;
 }
 
 .sidebar-link-sm {

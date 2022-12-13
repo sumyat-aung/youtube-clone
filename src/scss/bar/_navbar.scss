@@ -31,6 +31,7 @@
   align-items: center;
   padding: 0 10px;
   width: 255px;
+  z-index: 10;
 
   i {
     @include Icon;

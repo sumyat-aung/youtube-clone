@@ -1,18 +1,4 @@
-.feed {
-  width: calc(100vw - 240px);
-}
-
-@media all and (max-width: 1000px) {
-  .feed {
-    width: calc(100vw - 70px);
-  }
-}
-
-@media all and (max-width: 450px) {
-  .feed {
-    width: 100vw;
-  }
-}
+// wrapper
 
 .video-card-wrapper {
   margin-top: 30px;
@@ -21,6 +7,8 @@
   flex-wrap: wrap;
   cursor: pointer;
 }
+
+// video card
 
 .card-box {
   margin-left: 15px;
@@ -72,6 +60,8 @@
     }
   }
 }
+
+// responsive for wrapper & box
 
 @media all and (max-width: 700px) {
   .video-card-wrapper {
