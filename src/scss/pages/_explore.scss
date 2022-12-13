@@ -1,0 +1,40 @@
+.explore-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 30px;
+  margin: 20px 30px 0 30px;
+  border-bottom: 1px solid $hover;
+}
+
+.explore-items {
+  background-color: $hover;
+  margin: 20px;
+  width: 200px;
+  height: 120px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: $textcolor;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.explore-items i {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.explore-items:hover {
+  background-color: rgb(75, 75, 75);
+}
+
+.trending {
+  margin-top: 40px;
+
+  h1 {
+    color: $textcolor;
+    padding: 0 30px;
+  }
+}

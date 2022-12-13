@@ -16,12 +16,12 @@ export const youtubeApi = createApi({
         url: "/search?relatedToVideoId=7ghhRHRP6t4&part=id%2Csnippet&type=video&maxResults=50",
       }),
     }),
-    // getPostById: builder.query({
-    //     query: (id) =>({
-    //         url:`posts/${id}`  // this should take only one argument
-    //     })
-    // })
+    getSearch: builder.query({
+      query: (q) => ({
+        url: `/search?q=${q}&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`, // this should take only one argument
+      }),
+    }),
   }),
 });
 
-export const { useGetFeedQuery } = youtubeApi;
+export const { useGetFeedQuery, useGetSearchQuery } = youtubeApi;
