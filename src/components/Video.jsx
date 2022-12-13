@@ -1,19 +1,31 @@
 import React from "react";
+import moment from "moment";
+import { Link } from "react-router-dom";
 
 const Video = ({ d }) => {
-  console.log("fdsfs");
+  // Calculate the difference between the date format 'YYYY-MM-DDTHH:MM:SSZ'  and the current date
+  const date = d && d.snippet.publishTime;
+  const diff = moment().diff(moment(date));
+  const ago = moment.duration(diff).humanize();
+
   return (
-    <div className="card-box">
+    <Link to={"/explore"} className="card-box">
       <img src={d.snippet.thumbnails.medium?.url} alt={d.snippet.title} />
       <div className="card-content">
         <img src={d.snippet.thumbnails.default?.url} alt={d.snippet.title} />
         <div className="des">
           <p>{d.snippet.title}</p>
-          <div className="channel-name">{d.snippet.channelTitle}</div>
-          <div className="date"> {d.snippet.publishTime} </div>
+          <Link
+            to={"/gaming"}
+            className="channel-name"
+            text={d.snippet.channelTitle}
+          >
+            {d.snippet.channelTitle}
+          </Link>
+          <div className="date"> {ago} ago </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
