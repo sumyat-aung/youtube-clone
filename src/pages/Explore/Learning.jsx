@@ -1,6 +1,7 @@
 import React from "react";
 
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import Video from "../../components/Video";
 import { useGetSearchQuery } from "../../redux/data";
 
@@ -10,11 +11,16 @@ const Learning = () => {
 
   return (
     <div>
-      <p className="items-title">
-        Learning
-        <i className="fa-solid fa-graduation-cap"></i>
-      </p>
       {isFetching && <Loading />}
+
+      {isError && <Error />}
+
+      {LearningData && (
+        <p className="items-title">
+          Learning
+          <i className="fa-solid fa-graduation-cap"></i>
+        </p>
+      )}
 
       {LearningData && (
         <>

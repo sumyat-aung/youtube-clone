@@ -128,3 +128,15 @@
     cursor: default;
   }
 }
+
+// Error
+
+.error-box {
+  width: 100%;
+  height: 500px;
+  @include center;
+}
+
+.error {
+  color: $textcolor;
+}
