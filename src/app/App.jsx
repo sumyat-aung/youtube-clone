@@ -11,14 +11,24 @@ import Fashion from "../pages/Explore/Fashion.jsx";
 import Learning from "../pages/Explore/Learning.jsx";
 import Sports from "../pages/Explore/Sports.jsx";
 
+import ChannelDetails from "../pages/Details/ChannelDetails.jsx";
+import VideoDetails from "../pages/Details/VideoDetails.jsx";
+import { useState } from "react";
+
 // import necessary components ^^^^^
 
 function App() {
+  // state for bars
+  const [sideBar, setsideBar] = useState(
+    window.innerWidth < 1000 ? false : true
+  );
+
+  // jsx
   return (
     <div className="app">
-      <Nav />
+      <Nav sideBar={sideBar} setsideBar={setsideBar} />
       <div className="main">
-        <SideBar />
+        <SideBar sideBar={sideBar} setsideBar={setsideBar} />
         <div className="content">
           <Routes>
             <Route path="/" element={<Feed />} />
@@ -29,6 +39,9 @@ function App() {
             <Route path="/beauty" element={<Fashion />} />
             <Route path="/learning" element={<Learning />} />
             <Route path="/sports" element={<Sports />} />
+
+            <Route path="/channel/:id" element={<ChannelDetails />} />
+            <Route path="/video/:id" element={<VideoDetails />} />
           </Routes>
         </div>
       </div>

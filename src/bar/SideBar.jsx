@@ -1,7 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-import { context } from "../context/context.jsx";
 
 import studio from "../assests/sidebar/studio.svg";
 import music from "../assests/sidebar/music.svg";
@@ -10,10 +8,7 @@ import TV from "../assests/sidebar/TV.svg";
 
 // import necessary components ^^^^^
 
-const SideBar = () => {
-  // destructuring every value we need from context to set SideBar
-  const { sideBar, setsideBar } = useContext(context);
-
+const SideBar = ({ sideBar, setsideBar }) => {
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 1000) {

@@ -1,16 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import logo from "../assests/navbar/logo.png";
 import NotiBox from "../components/NotiBox";
 
-import { context } from "../context/context.jsx";
-
 // import necessary components ^^^^^
 
-const Nav = () => {
-  // destructuring every value we need from context to set SideBar
-  const { sideBar, setsideBar } = useContext(context);
+const Nav = ({ sideBar, setsideBar }) => {
   const sideBarButtonHandle = () => {
     setsideBar(!sideBar);
   };
