@@ -49,3 +49,9 @@
     font-size: 14px;
   }
 }
+
+@media all and (hover: none) {
+  .explore-items {
+    cursor: default;
+  }
+}
