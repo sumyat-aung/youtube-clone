@@ -7,7 +7,7 @@ import Video from "../../components/Video";
 import { useGetSearchQuery } from "../../redux/data";
 
 const Sports = () => {
-  const { data, isFetching, isError } = useGetSearchQuery("soccer");
+  const { data, isFetching, isError } = useGetSearchQuery("Sports");
   const sportsData = data?.items;
 
   return (

@@ -37,3 +37,15 @@
     padding: 0 30px;
   }
 }
+
+@media all and (max-width: 800px) {
+  .explore-items {
+    width: 150px;
+    height: 100px;
+  }
+
+  .explore-items i {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+}

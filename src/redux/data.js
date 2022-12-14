@@ -18,10 +18,16 @@ export const youtubeApi = createApi({
     }),
     getSearch: builder.query({
       query: (q) => ({
-        url: `/search?q=${q}&part=snippet%2Cid&regionCode=US&maxResults=50&order=date`, // this should take only one argument
+        url: `/search?q=${q}&part=snippet%2Cid&maxResults=50`, // this should take only one argument
+      }),
+    }),
+    getExplore: builder.query({
+      query: () => ({
+        url: `/search?relatedToVideoId=lY2yjAdbvdQ&part=id%2Csnippet&type=video&maxResults=50`, // this should take only one argument
       }),
     }),
   }),
 });
 
-export const { useGetFeedQuery, useGetSearchQuery } = youtubeApi;
+export const { useGetFeedQuery, useGetSearchQuery, useGetExploreQuery } =
+  youtubeApi;

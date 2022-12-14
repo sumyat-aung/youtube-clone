@@ -6,7 +6,7 @@ import Video from "../../components/Video";
 import { useGetSearchQuery } from "../../redux/data";
 
 const Learning = () => {
-  const { data, isFetching, isError } = useGetSearchQuery("Veritasium");
+  const { data, isFetching, isError } = useGetSearchQuery("Education & Learning");
   const LearningData = data?.items;
 
   return (

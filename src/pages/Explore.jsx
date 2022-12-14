@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Error from "../components/Error";
+import { useGetExploreQuery } from "../redux/data";
+import VerticalVideo from "../components/VerticalVideo";
+import VerticalLoading from "../components/VerticalLoading";
+
 const Explore = () => {
+  const { data, isFetching, isError } = useGetExploreQuery();
+  const TrendingData = data?.items;
+
   return (
     <div className="explore-feed">
       <div className="explore-wrapper">
@@ -19,7 +27,17 @@ const Explore = () => {
         </Link>
       </div>
       <div className="trending">
-        <h1>Trending Videos</h1>
+        {isFetching && <VerticalLoading />}
+        {isError && <Error />}
+
+        {TrendingData && <h1>Trending Videos</h1>}
+        {TrendingData && (
+          <div className="ver-card-wrapper">
+            {TrendingData.map((data) => (
+              <VerticalVideo key={data.id.videoId} d={data} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
