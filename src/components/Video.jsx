@@ -8,8 +8,14 @@ const Video = ({ d }) => {
   const diff = moment().diff(moment(date));
   const ago = moment.duration(diff).humanize();
 
+  console.log(d);
+
   return (
-    <Link to={"/explore"} className="card-box" text="Click to play">
+    <Link
+      to={`/video/${d?.id?.videoId}`}
+      className="card-box"
+      text="Click to play"
+    >
       <img src={d.snippet.thumbnails.medium?.url} alt={d.snippet.title} />
       <div className="card-content">
         <img
@@ -20,7 +26,7 @@ const Video = ({ d }) => {
         <div className="des">
           <p>{d.snippet.title}</p>
           <Link
-            to={"/gaming"}
+            to={`/channel/${d?.snippet?.channelId}`}
             className="channel-name"
             text={d.snippet.channelTitle}
           >

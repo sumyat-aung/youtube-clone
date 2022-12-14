@@ -8,7 +8,11 @@ const VerticalVideo = ({ d }) => {
   const ago = moment.duration(diff).humanize();
 
   return (
-    <Link to={"/explore"} className="ver-card" alt="Click to play">
+    <Link
+      to={`/video/${d?.id?.videoId}`}
+      className="ver-card"
+      alt="Click to play"
+    >
       <img src={d.snippet.thumbnails.medium?.url} alt={d.snippet.title} />
       <div className="ver-card-content">
         <div className="des">
@@ -22,7 +26,7 @@ const VerticalVideo = ({ d }) => {
               className="thumb"
             />
             <Link
-              to={"/gaming"}
+              to={`/channel/${d?.snippet?.channelId}`}
               className="channel-name"
               text={d.snippet.channelTitle}
             >
