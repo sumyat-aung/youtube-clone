@@ -10,7 +10,7 @@ import Error from "../components/Error";
 const Feed = () => {
   const { data, isFetching, isError } = useGetFeedQuery();
   const feedData = data?.items;
-  
+
   return (
     <div className="feed">
       {isFetching && <Loading />}

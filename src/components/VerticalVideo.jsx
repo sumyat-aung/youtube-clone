@@ -2,7 +2,10 @@ import React from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 
+// import necessary components ^^^^^
+
 const VerticalVideo = ({ d }) => {
+  // Calculate the difference between the date format 'YYYY-MM-DDTHH:MM:SSZ'  and the current date
   const date = d && d.snippet.publishTime;
   const diff = moment().diff(moment(date));
   const ago = moment.duration(diff).humanize();
