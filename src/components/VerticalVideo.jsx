@@ -29,6 +29,7 @@ const VerticalVideo = ({ d }) => {
               className="thumb"
             />
             <Link
+              as="li"
               to={`/channel/${d?.snippet?.channelId}`}
               className="channel-name"
               text={d.snippet.channelTitle}

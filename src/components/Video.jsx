@@ -26,6 +26,7 @@ const Video = ({ d }) => {
         <div className="des">
           <p>{d.snippet.title}</p>
           <Link
+            as="li"
             to={`/channel/${d?.snippet?.channelId}`}
             className="channel-name"
             text={d.snippet.channelTitle}

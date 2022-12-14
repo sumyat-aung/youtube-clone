@@ -4,7 +4,7 @@ import { API_KEY } from "../key/key";
 export const youtubeApi = createApi({
   reducerPath: "youtubeApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://youtube-v31.p.rapidapi.com", //added your base url
+    baseUrl: "https://youtube-v31.p.rapidapi.com", //added base url
     prepareHeaders: (headers) => {
       headers.set("X-RapidAPI-Key", API_KEY);
       return headers;
