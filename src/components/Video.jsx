@@ -16,11 +16,16 @@ const Video = ({ d }) => {
       className="card-box"
       text="Click to play"
     >
-      <img src={d.snippet.thumbnails.medium?.url} alt={d.snippet.title} />
+      <img
+        src={d.snippet.thumbnails.medium?.url}
+        alt={d.snippet.title}
+        referrerPolicy="no-referrer"
+      />
       <div className="card-content">
         <img
           src={d.snippet.thumbnails.medium?.url}
           alt={d.snippet.title}
+          referrerPolicy="no-referrer"
           className="thumb"
         />
         <div className="des">

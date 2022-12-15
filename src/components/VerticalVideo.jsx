@@ -16,7 +16,11 @@ const VerticalVideo = ({ d }) => {
       className="ver-card"
       alt="Click to play"
     >
-      <img src={d.snippet.thumbnails.medium?.url} alt={d.snippet.title} />
+      <img
+        src={d.snippet.thumbnails.medium?.url}
+        alt={d.snippet.title}
+        referrerPolicy="no-referrer"
+      />
       <div className="ver-card-content">
         <div className="des">
           <p>{d.snippet.title}</p>
@@ -26,6 +30,7 @@ const VerticalVideo = ({ d }) => {
             <img
               src={d.snippet.thumbnails.medium?.url}
               alt={d.snippet.title}
+              referrerPolicy="no-referrer"
               className="thumb"
             />
             <Link
