@@ -51,13 +51,12 @@ const VideoDetails = ({ setsideBar }) => {
       ? numeral(+Views).format("0a")
       : numeral(+Views).format("0.000a");
 
-  console.log(videosDisData);
   /// jsx
 
   return (
     <div>
       {(isError || relatedError) && <Error />}
-      {(isFetching || relatedFetching) && <Error />}
+      {(isFetching || relatedFetching) && <VideoLoading />}
       {data && relatedData && !isFetching && !relatedFetching && (
         <>
           <div className="video-detail">
