@@ -52,6 +52,12 @@ export const youtubeApi = createApi({
         url: `/videos?part=contentDetails%2Csnippet%2Cstatistics&id=${id}`, // this should take only one argument
       }),
     }),
+
+      getRelatedVideos: builder.query({
+      query: (id) => ({
+        url: `/search?relatedToVideoId=${id}&part=id%2Csnippet&type=video&maxResults=50`,
+      }),
+    }),
   }),
 });
 
@@ -62,4 +68,5 @@ export const {
   useGetVideoDetailsQuery,
   useGetChannelDetailsQuery,
   useGetChannelVideosQuery,
+  useGetRelatedVideosQuery
 } = youtubeApi;

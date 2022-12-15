@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Nav from "../bar/Nav.jsx";
@@ -14,7 +15,6 @@ import Sports from "../pages/Explore/Sports.jsx";
 
 import ChannelDetails from "../pages/Details/ChannelDetails.jsx";
 import VideoDetails from "../pages/Details/VideoDetails.jsx";
-import { useState } from "react";
 
 // import necessary components ^^^^^
 
@@ -42,7 +42,10 @@ function App() {
             <Route path="/sports" element={<Sports />} />
 
             <Route path="/channel/:id" element={<ChannelDetails />} />
-            <Route path="/video/:id" element={<VideoDetails />} />
+            <Route
+              path="/video/:id"
+              element={<VideoDetails setsideBar={setsideBar} />}
+            />
           </Routes>
         </div>
       </div>

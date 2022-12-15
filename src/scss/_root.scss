@@ -16,10 +16,10 @@ body {
 
 .main {
   display: flex;
+  overflow-y: auto;
 }
 
 .content {
-  // border: olive solid 1px;
   height: calc(100vh - 56px);
   overflow-y: auto;
   flex-grow: 2;

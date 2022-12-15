@@ -4,7 +4,7 @@ const Error = () => {
   return (
     <div className="error-box">
       <div className="error">
-        <h3>Something went try, Please try again later.</h3>
+        <h3>Something went wrong, Please try again later.</h3>
       </div>
     </div>
   );

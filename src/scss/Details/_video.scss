@@ -1,0 +1,113 @@
+.video-detail {
+  width: 100%;
+  @include center;
+  flex-direction: column;
+}
+
+.related-videos {
+  margin-top: 60px;
+}
+
+.title {
+  font-size: 24px;
+  border-bottom: 1px solid $border;
+  color: $textcolor;
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+.video-title {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 200;
+  width: 95%;
+}
+
+.video-des {
+  padding: 10px;
+  background-color: #272727;
+  border-radius: 10px;
+  //   border: 1px solid;
+  display: flex;
+  width: 95%;
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  .des-one {
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    div h3 {
+      color: $textcolor;
+      font-size: 22px;
+      font-weight: 300;
+    }
+
+    div h3:hover {
+      color: rgba(228, 228, 228, 0.678);
+    }
+
+    div h4 {
+      font-size: 14px;
+      color: rgba(184, 184, 184, 0.678);
+      font-weight: 300;
+    }
+  }
+
+  .des-two {
+    margin-right: 20px;
+    font-size: 20px;
+    color: $textcolor;
+    font-weight: 300;
+
+    i {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  .video-title {
+    font-size: 20px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .video-title {
+    font-size: 16px;
+  }
+
+  .video-des {
+    .des-one {
+      div h3 {
+        font-size: 16px;
+      }
+
+      div h4 {
+        font-size: 12px;
+      }
+    }
+
+    .des-two {
+      margin-right: 0;
+      font-size: 16px;
+
+      i {
+        margin-left: 6px;
+      }
+    }
+  }
+  .title {
+    padding-left: 20px;
+  }
+}
