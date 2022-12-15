@@ -10,6 +10,11 @@ const Explore = () => {
   const { data, isFetching, isError } = useGetExploreQuery();
   const TrendingData = data?.items;
 
+  // flitering video only from api given array
+  const FliteringVideoOnly = TrendingData?.filter(
+    (obj) => obj?.id?.kind !== "youtube#channel"
+  );
+
   return (
     <div className="explore-feed">
       <div className="explore-wrapper">
@@ -33,7 +38,7 @@ const Explore = () => {
         {TrendingData && <h1>Trending Videos</h1>}
         {TrendingData && (
           <div className="ver-card-wrapper">
-            {TrendingData.map((data) => (
+            {FliteringVideoOnly.map((data) => (
               <VerticalVideo key={data.id.videoId} d={data} />
             ))}
           </div>

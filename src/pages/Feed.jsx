@@ -11,13 +11,18 @@ const Feed = () => {
   const { data, isFetching, isError } = useGetFeedQuery();
   const feedData = data?.items;
 
+  // flitering video only from api given array
+  const FliteringVideoOnly = feedData?.filter(
+    (obj) => obj?.id?.kind !== "youtube#channel"
+  );
+
   return (
     <div className="feed">
       {isFetching && <Loading />}
       {isError && <Error />}
       {feedData && (
         <div className="video-card-wrapper">
-          {feedData.map((data) => (
+          {FliteringVideoOnly.map((data) => (
             <Video key={data.id.videoId} d={data} />
           ))}
         </div>

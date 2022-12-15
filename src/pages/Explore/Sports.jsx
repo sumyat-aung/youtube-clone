@@ -10,6 +10,11 @@ const Sports = () => {
   const { data, isFetching, isError } = useGetSearchQuery("Sports");
   const sportsData = data?.items;
 
+  // flitering video only from api given array
+  const FliteringVideoOnly = sportsData?.filter(
+    (obj) => obj?.id?.kind !== "youtube#channel"
+  );
+
   return (
     <div>
       {isFetching && <Loading />}
@@ -25,7 +30,7 @@ const Sports = () => {
       {sportsData && (
         <>
           <div className="video-card-wrapper">
-            {sportsData.map((data) => (
+            {FliteringVideoOnly.map((data) => (
               <Video key={data.id.videoId} d={data} />
             ))}
           </div>

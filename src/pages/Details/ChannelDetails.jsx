@@ -13,12 +13,13 @@ import Video from "../../components/Video";
 // import necessary components ^^^^^
 
 const ChannelDetails = () => {
-  // fetching datas base in ID
   const { id } = useParams();
 
+  // channel banner
   const { data, isFetching, isError } = useGetChannelDetailsQuery(id);
   let channelCardData = data?.items?.[0];
 
+  // channel video
   const {
     data: videoData,
     isFetching: videoFetching,
@@ -26,7 +27,10 @@ const ChannelDetails = () => {
   } = useGetChannelVideosQuery(id);
   const VideoCardData = videoData?.items;
 
-  console.log(VideoCardData);
+  // flitering video only from api given array
+  const FliteringVideoOnly = VideoCardData?.filter(
+    (obj) => obj?.id?.kind !== "youtube#channel"
+  );
 
   // getting subscribers formatted with numeral
   let subscribers = channelCardData?.statistics?.subscriberCount;
@@ -70,7 +74,7 @@ const ChannelDetails = () => {
             </div>
           </div>
           <div className="video-card-wrapper">
-            {VideoCardData?.map((data) => (
+            {FliteringVideoOnly?.map((data) => (
               <Video key={data.id.videoId} d={data} />
             ))}
           </div>

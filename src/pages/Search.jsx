@@ -13,6 +13,11 @@ const Search = () => {
   const { data, isFetching, isError } = useGetSearchQuery(q);
   const searchData = data?.items;
 
+  // flitering video only from api given array
+  const FliteringVideoOnly = searchData?.filter(
+    (obj) => obj?.id?.kind !== "youtube#channel"
+  );
+
   return (
     <div>
       <p className="search">Search result for : "{q}"</p>
@@ -23,7 +28,7 @@ const Search = () => {
 
       {searchData && !isFetching && (
         <div className="ver-card-wrapper">
-          {searchData.map((data) => (
+          {FliteringVideoOnly.map((data) => (
             <VerticalVideo key={data.id.videoId} d={data} />
           ))}
         </div>
