@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Video = ({ d }) => {
   // Calculate the difference between the date format 'YYYY-MM-DDTHH:MM:SSZ'  and the current date
-  const date = d && d.snippet.publishTime;
+  const date = d && d?.snippet?.publishTime;
   const diff = moment().diff(moment(date));
   const ago = moment.duration(diff).humanize();
 
