@@ -81,12 +81,13 @@ const VideoDetails = ({ setsideBar }) => {
                 />
                 <div>
                   <h3>{videosDisData?.snippet?.channelTitle}</h3>
-                  <h4>{viewformatted} views</h4>
+                  <h4>{viewformatted.toUpperCase()} views</h4>
                 </div>
               </Link>
 
               <div className="des-two">
-                {Likeformatted} Likes <i className="fa-solid fa-thumbs-up"></i>
+                {Likeformatted.toUpperCase()} Likes{" "}
+                <i className="fa-solid fa-thumbs-up"></i>
               </div>
             </div>
           </div>
