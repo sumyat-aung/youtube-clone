@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // import necessary components ^^^^^
 
@@ -10,6 +10,9 @@ const VerticalVideo = ({ d }) => {
   const diff = moment().diff(moment(date));
   const ago = moment.duration(diff).humanize();
 
+  // using navigation
+  const navigate = useNavigate();
+
   return (
     <Link
       to={`/video/${d?.id?.videoId}`}
@@ -17,32 +20,33 @@ const VerticalVideo = ({ d }) => {
       alt="Click to play"
     >
       <img
-        src={d.snippet.thumbnails.medium?.url}
-        alt={d.snippet.title}
+        src={d?.snippet?.thumbnails?.medium?.url}
+        alt={d?.snippet?.title}
         referrerPolicy="no-referrer"
       />
       <div className="ver-card-content">
         <div className="des">
-          <p>{d.snippet.title}</p>
+          <p>{d?.snippet?.title}</p>
 
           <div className="date"> {ago} ago </div>
           <div className="acc">
             <img
-              src={d.snippet.thumbnails.medium?.url}
-              alt={d.snippet.title}
+              src={d?.snippet?.thumbnails?.medium?.url}
+              alt={d?.snippet?.title}
               referrerPolicy="no-referrer"
               className="thumb"
             />
-            <Link
-              as="li"
-              to={`/channel/${d?.snippet?.channelId}`}
+            <div
+              onClick={() => {
+                navigate(`/channel/${d?.snippet?.channelId}`);
+              }}
               className="channel-name"
-              text={d.snippet.channelTitle}
+              text={d?.snippet?.channelTitle}
             >
-              {d.snippet.channelTitle}
-            </Link>
+              {d?.snippet?.channelTitle}
+            </div>
           </div>
-          <p className="description">{d.snippet.description}</p>
+          <p className="description">{d?.snippet?.description}</p>
         </div>
       </div>
     </Link>

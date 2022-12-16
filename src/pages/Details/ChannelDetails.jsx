@@ -75,7 +75,7 @@ const ChannelDetails = () => {
           </div>
           <div className="video-card-wrapper">
             {FliteringVideoOnly?.map((data) => (
-              <Video key={data.id.videoId} d={data} />
+              <Video key={data?.id?.videoId} d={data} />
             ))}
           </div>
         </>

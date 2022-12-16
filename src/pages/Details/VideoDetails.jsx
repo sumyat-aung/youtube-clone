@@ -66,6 +66,11 @@ const VideoDetails = ({ setsideBar }) => {
               // height="700px"
               controls={true}
               url={`https://www.youtube.com/watch?v=${id}`}
+              playing
+              origin="https://www.youtube.com"
+              iframe={{
+                allowFullScreen: true,
+              }}
             />
 
             <h2 className="video-title">{videosDisData?.snippet?.title}</h2>
@@ -93,7 +98,7 @@ const VideoDetails = ({ setsideBar }) => {
             <h2 className="title">Related Videos</h2>
             <div className="video-card-wrapper">
               {FliteringVideoOnly?.map((data) => (
-                <Video key={data.id.videoId} d={data} />
+                <Video key={data?.id?.videoId} d={data} />
               ))}
             </div>
           </div>

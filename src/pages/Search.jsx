@@ -29,7 +29,7 @@ const Search = () => {
       {searchData && !isFetching && (
         <div className="ver-card-wrapper">
           {FliteringVideoOnly.map((data) => (
-            <VerticalVideo key={data.id.videoId} d={data} />
+            <VerticalVideo key={data?.id?.videoId} d={data} />
           ))}
         </div>
       )}
