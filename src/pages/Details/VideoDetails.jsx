@@ -64,13 +64,10 @@ const VideoDetails = ({ setsideBar }) => {
               className="react-player"
               width="95%"
               // height="700px"
+              origin="https://ytbe.netlify.app/"
               controls={true}
               url={`https://www.youtube.com/watch?v=${id}`}
               playing
-              origin="https://www.youtube.com"
-              iframe={{
-                allowFullScreen: true,
-              }}
             />
 
             <h2 className="video-title">{videosDisData?.snippet?.title}</h2>
