@@ -5,6 +5,7 @@ import studio from "../assests/sidebar/studio.svg";
 import music from "../assests/sidebar/music.svg";
 import kids from "../assests/sidebar/kids.svg";
 import TV from "../assests/sidebar/TV.svg";
+import Admin from "../administrator/Admin";
 
 // import necessary components ^^^^^
 
@@ -142,6 +143,7 @@ const SideBar = ({ sideBar, setsideBar }) => {
               <img src={TV} alt="youtube TV" /> YouTube TV
             </a>
           </div>
+          <Admin />
         </div>
       )}
 

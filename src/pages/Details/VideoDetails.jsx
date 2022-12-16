@@ -63,8 +63,7 @@ const VideoDetails = ({ setsideBar }) => {
             <ReactPlayer
               className="react-player"
               width="95%"
-              // height="700px"
-              origin="https://ytbe.netlify.app/"
+              origin={window.location.href}
               controls={true}
               url={`https://www.youtube.com/watch?v=${id}`}
               playing
