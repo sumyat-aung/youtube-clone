@@ -33,7 +33,7 @@
 
  React
 
- Redux tookit
+ Redux toolkit
 
  Scss ( Css pre-processor )
 
