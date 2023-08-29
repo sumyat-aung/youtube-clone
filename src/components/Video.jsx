@@ -13,6 +13,11 @@ const Video = ({ d }) => {
   // using navigation
   const navigate = useNavigate();
 
+  // Replace '=>' with ':' in the URL strings
+  const correctedMediumUrl = d?.snippet?.thumbnails?.medium?.url
+    .replace(/=>/g, ":")
+    .replace(/\s/g, "");
+
   return (
     <Link
       to={`/video/${d?.id?.videoId}`}
@@ -20,13 +25,13 @@ const Video = ({ d }) => {
       text="Click to play"
     >
       <img
-        src={d?.snippet?.thumbnails?.medium?.url}
+        src={correctedMediumUrl}
         alt={d?.snippet?.title}
         referrerPolicy="no-referrer"
       />
       <div className="card-content">
         <img
-          src={d?.snippet?.thumbnails?.medium?.url}
+          src={correctedMediumUrl}
           alt={d?.snippet?.title}
           referrerPolicy="no-referrer"
           className="thumb"

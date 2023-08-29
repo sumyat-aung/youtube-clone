@@ -13,6 +13,11 @@ const VerticalVideo = ({ d }) => {
   // using navigation
   const navigate = useNavigate();
 
+  // Replace '=>' with ':' in the URL strings
+  const correctedMediumUrl = d?.snippet?.thumbnails?.medium?.url
+    .replace(/=>/g, ":")
+    .replace(/\s/g, "");
+
   return (
     <Link
       to={`/video/${d?.id?.videoId}`}
@@ -20,7 +25,7 @@ const VerticalVideo = ({ d }) => {
       alt="Click to play"
     >
       <img
-        src={d?.snippet?.thumbnails?.medium?.url}
+        src={correctedMediumUrl}
         alt={d?.snippet?.title}
         referrerPolicy="no-referrer"
       />
@@ -31,7 +36,7 @@ const VerticalVideo = ({ d }) => {
           <div className="date"> {ago} ago </div>
           <div className="acc">
             <img
-              src={d?.snippet?.thumbnails?.medium?.url}
+              src={correctedMediumUrl}
               alt={d?.snippet?.title}
               referrerPolicy="no-referrer"
               className="thumb"
